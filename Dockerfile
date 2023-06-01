@@ -1,7 +1,7 @@
 #
 # Set a variable that can be used in all stages.
 #
-ARG BUILD_HOME=/agendamento
+ARG BUILD_HOME=/agendamento-backend
 
 #
 # Gradle image for the build stage.
@@ -43,4 +43,4 @@ COPY --from=build-image $APP_HOME/build/libs/*.jar app.jar
 #
 # The command to run when the container starts.
 #
-ENTRYPOINT java -jar app.jar
+ENTRYPOINT ["java", "-jar",  "/app.jar"]
